@@ -15,7 +15,7 @@ CREATE SEQUENCE funcionario_seq
 	CACHE 1;
 
 CREATE TABLE Email (
-	id int NOT NULL,
+	id int NOT NULL DEFAULT nextval('email_seq'),
 	descricao varchar(100) NOT NULL,
 	PRIMARY KEY (id)
 );
