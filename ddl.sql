@@ -1,13 +1,13 @@
 CREATE DATABASE pgsql_teste;
 
-CREATE SEQUENCE id_email
+CREATE SEQUENCE email_seq
 	INCREMENT 1
 	MINVALUE 1
 	MAXVALUE 9223372036854775807
 	START 1
 	CACHE 1;
 	
-CREATE SEQUENCE id_funcionario
+CREATE SEQUENCE funcionario_seq
 	INCREMENT 1
 	MINVALUE 1
 	MAXVALUE 9223372036854775807
@@ -21,7 +21,7 @@ CREATE TABLE Email (
 );
 
 CREATE TABLE Funcionario (
-	id int NOT NULL,
+	id int NOT NULL DEFAULT nextval('funcionario_seq'),
 	nome varchar(100) NOT NULL,
 	id_email int NOT NULL,
 	PRIMARY KEY (id),
